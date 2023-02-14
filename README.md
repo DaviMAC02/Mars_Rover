@@ -3,7 +3,7 @@
 
 <h1 align="center">
   <br>
-  <a href=""><img src="https://cdn-icons-png.flaticon.com/512/6410/6410570.png" alt="Mars Rover" width="250"></a>
+  <a href=""><img src="https://cdn-icons-png.flaticon.com/512/947/947680.png" alt="Mars Rover" width="250"></a>
 </h1>
 
 
