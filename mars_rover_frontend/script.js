@@ -3,10 +3,8 @@ function createGrid() {
     let numBlocksX = parseInt(document.getElementById("rightMostCoord").value) + 1;
     let numBlocksY = parseInt(document.getElementById("upperMostCoord").value) + 1;
   
-    // clear previous grid if it exists
     container.innerHTML = "";
   
-    // create new grid of blocks
     for (let y = 0; y < numBlocksY; y++) {
       for (let x = 0; x < numBlocksX; x++) {
         let block = document.createElement("div");
