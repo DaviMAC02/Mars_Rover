@@ -19,7 +19,4 @@ export default class RoverLog extends BaseModel {
 
   @column()
   public current_position: string
-
-  @column()
-  public rover_id: number
 }

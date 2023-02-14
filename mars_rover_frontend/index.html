@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2D Grid of Blocks</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header>
+        <form>
+            <label for="rightMostCoord">Rightmost Coord:</label>
+            <input type="number" id="rightMostCoord" name="rightMostCoord" min="1" max="50">
+            <label for="upperMostCoord">Uppermost Coord Y:</label>
+            <input type="number" id="upperMostCoord" name="num-blocks-y" min="1" max="50">
+            <button type="button" onclick="createGrid();">Create Grid</button>
+        </form>
+        <form>
+            <label for="landingPos">Landing Position:</label>
+            <input type="text" id="landingPos" name="landingPos">
+            <label for="instruction">Instruction:</label>
+            <input type="text" id="instruction" name="instruction">
+            <button type="button" id = "calculate_position">Calculate</button>
+        </form>
+    </header>
+    <div id="container"></div>
+    <div class="resultSection">
+        <h3 id="result"></h3>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

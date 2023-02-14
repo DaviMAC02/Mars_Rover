@@ -12,14 +12,12 @@ export default class extends BaseSchema {
       table.string('instruction')
       table.string('inputed_position')
       table.string('current_position')
-      table.integer('rover_id').unsigned().references('id').inTable('rovers').onDelete('CASCADE')
     })
   }
 
   public async down () {
     this.schema.table(this.tableName, (table) => {
-      table.dropForeign('rover_id')
-      table.dropColumn('rover_id')
+
     })
     this.schema.dropTable(this.tableName)
   }

@@ -19,8 +19,6 @@
 */
 
 import './routes/roverLog.route.ts'
-import './routes/rover.route.ts'
-import './routes/plateau.route.ts'
 import Route from '@ioc:Adonis/Core/Route'
 
 Route.get('/', async () => {

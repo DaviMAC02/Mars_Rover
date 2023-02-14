@@ -55,9 +55,9 @@ export class RoverLogController {
     }
 
     public static async store ({ request, response }: HttpContextContract) {
-        const { instruction, inputed_position, rover_id } = request.all()
+        const { instruction, inputed_position } = request.all()
         const current_position = calculate_current_position(instruction, inputed_position)
-        const roverLog = await RoverLog.create({ instruction, inputed_position, current_position, rover_id })
+        const roverLog = await RoverLog.create({ instruction, inputed_position, current_position })
         return response.status(200).send(roverLog)
     }
 
