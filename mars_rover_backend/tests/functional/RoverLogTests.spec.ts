@@ -5,7 +5,6 @@ test.group('RoverLog', (group) => {
     let logId: number = 1
 
     test('should insert one log instance and return the correct position and direction', async ({client}) => {
-        const rover = await client.post('/rover')
         const response = await client.post('/roverLog')
         .field('instruction', "MRRMMRMRRM")
         .field('inputed_position', "3 3 E")
