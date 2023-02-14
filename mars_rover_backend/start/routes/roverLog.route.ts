@@ -1,5 +1,5 @@
 import Route from '@ioc:Adonis/Core/Route'
-import RoverLogController from 'App/Controllers/Http/RoverLogController'
+import {RoverLogController} from 'App/Controllers/Http/RoverLogController'
 
 Route.get('/roverLog', RoverLogController.index)
 

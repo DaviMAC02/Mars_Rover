@@ -1,7 +1,7 @@
 import { DateTime } from 'luxon'
 import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
 
-export default class RoverLog extends BaseModel {
+export default class Rover extends BaseModel {
   @column({ isPrimary: true })
   public id: number
 
@@ -10,16 +10,4 @@ export default class RoverLog extends BaseModel {
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   public updatedAt: DateTime
-
-  @column()
-  public instruction: string
-
-  @column()
-  public inputed_position: string
-
-  @column()
-  public current_position: string
-
-  @column()
-  public rover_id: number
 }

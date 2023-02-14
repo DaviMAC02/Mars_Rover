@@ -1,7 +1,7 @@
 import { DateTime } from 'luxon'
 import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
 
-export default class RoverLog extends BaseModel {
+export default class Plateau extends BaseModel {
   @column({ isPrimary: true })
   public id: number
 
@@ -12,14 +12,8 @@ export default class RoverLog extends BaseModel {
   public updatedAt: DateTime
 
   @column()
-  public instruction: string
+  public x_size: number
 
   @column()
-  public inputed_position: string
-
-  @column()
-  public current_position: string
-
-  @column()
-  public rover_id: number
+  public y_size: number
 }

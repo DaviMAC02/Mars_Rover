@@ -1,7 +1,7 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import RoverLog from 'App/Models/RoverLog'
 
-const calculate_current_position = (instruction: string, inputed_position: string) => {
+export const calculate_current_position = (instruction: string, inputed_position: string) => {
     const directions = ['N', 'E', 'S', 'W']
     const [x, y, direction] = inputed_position.split(' ')
     const instructions = instruction.split('')
@@ -48,16 +48,16 @@ const calculate_current_position = (instruction: string, inputed_position: strin
     return `${currentX} ${currentY} ${current_direction}`
 }
         
-export default class RoverLogController {
+export class RoverLogController {
     public static async index ({ response }: HttpContextContract) {
         const roverLogs = await RoverLog.all()
         return response.status(200).send(roverLogs)
     }
 
     public static async store ({ request, response }: HttpContextContract) {
-        const { instruction, inputed_position } = request.all()
+        const { instruction, inputed_position, rover_id } = request.all()
         const current_position = calculate_current_position(instruction, inputed_position)
-        const roverLog = await RoverLog.create({ instruction, inputed_position, current_position })
+        const roverLog = await RoverLog.create({ instruction, inputed_position, current_position, rover_id })
         return response.status(200).send(roverLog)
     }
 
@@ -71,6 +71,6 @@ export default class RoverLogController {
         const roverLog = await RoverLog.findOrFail(request.param('id'))
         await roverLog.delete()
         return response.status(200).send(roverLog)
-    }
-    
+    }    
 }
+
